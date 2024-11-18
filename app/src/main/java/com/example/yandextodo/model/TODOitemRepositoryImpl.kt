@@ -70,13 +70,13 @@ class TodoItemsRepositoryImpl : TodoItemRepository {
             ),
             TodoItem(
                 id = "3",
-                text = "Купить что-то, где-то, зачем-то, но зачем не очень понятно",
+                text = "Купить что-то",
                 importance = TodoImportance.LOW,
                 createdAt = Date()
             ),
             TodoItem(
                 id = "4",
-                text = "Купить что-то, где-то, зачем-то, но зачем не очень понятно, но точно чтобы показать как обрезать текст",
+                text = "Купить что-то",
                 importance = TodoImportance.HIGH,
                 deadline = createDate(2024, 11, 24),
                 isCompleted = true,
@@ -84,111 +84,111 @@ class TodoItemsRepositoryImpl : TodoItemRepository {
             ),
             TodoItem(
                 id = "5",
-                text = "А здесь я хочу показать как открывается длинный текст - он будет очень длинным, но повторяющимся. Это всё для того, чтобы вы увидели, что вторую страницу тоже можно прокручивать если в неё внести ооочень длинный список задач или большую заметку :) \nА здесь я хочу показать как открывается длинный текст - он будет очень длинным, но повторяющимся. Это всё для того, чтобы вы увидели, что вторую страницу тоже можно прокручивать если в неё внести ооочень длинный список задач или большую заметку :) \nА здесь я хочу показать как открывается длинный текст - он будет очень длинным, но повторяющимся. Это всё для того, чтобы вы увидели, что вторую страницу тоже можно прокручивать если в неё внести ооочень длинный список задач или большую заметку :) \nА здесь я хочу показать как открывается длинный текст - он будет очень длинным, но повторяющимся. Это всё для того, чтобы вы увидели, что вторую страницу тоже можно прокручивать если в неё внести ооочень длинный список задач или большую заметку :) \nА здесь я хочу показать как открывается длинный текст - он будет очень длинным, но повторяющимся. Это всё для того, чтобы вы увидели, что вторую страницу тоже можно прокручивать если в неё внести ооочень длинный список задач или большую заметку :) \nА здесь я хочу показать как открывается длинный текст - он будет очень длинным, но повторяющимся. Это всё для того, чтобы вы увидели, что вторую страницу тоже можно прокручивать если в неё внести ооочень длинный список задач или большую заметку :) \nА здесь я хочу показать как открывается длинный текст - он будет очень длинным, но повторяющимся. Это всё для того, чтобы вы увидели, что вторую страницу тоже можно прокручивать если в неё внести ооочень длинный список задач или большую заметку :) \nА здесь я хочу показать как открывается длинный текст - он будет очень длинным, но повторяющимся. Это всё для того, чтобы вы увидели, что вторую страницу тоже можно прокручивать если в неё внести ооочень длинный список задач или большую заметку :) \nА здесь я хочу показать как открывается длинный текст - он будет очень длинным, но повторяющимся. Это всё для того, чтобы вы увидели, что вторую страницу тоже можно прокручивать если в неё внести ооочень длинный список задач или большую заметку :) \n",
+                text = "Купить что-то",
                 importance = TodoImportance.HIGH,
                 deadline = createDate(2024, 11, 27),
                 createdAt = Date()
             ),
             TodoItem(
                 id = "6",
-                text = "Купить что-то, где-то, зачем-то, но зачем не очень понятно, но точно чтобы показать как обрезать текст",
+                text = "Купить что-то",
                 importance = TodoImportance.DEFAULT,
                 deadline = createDate(2024, 11, 28),
                 createdAt = Date()
             ),
             TodoItem(
                 id = "7",
-                text = "Сделать уборку",
+                text = "Купить что-то",
                 importance = TodoImportance.LOW,
                 createdAt = Date()
             ),
             TodoItem(
                 id = "8",
-                text = "Помыть посуду",
+                text = "Купить что-то",
                 importance = TodoImportance.HIGH,
                 deadline = createDate(2024, 11, 28),
                 createdAt = Date()
             ),
             TodoItem(
                 id = "9",
-                text = "Закончить проект",
+                text = "Купить что-то",
                 importance = TodoImportance.DEFAULT,
                 deadline = createDate(2024, 11, 28),
                 createdAt = Date()
             ),
             TodoItem(
                 id = "10",
-                text = "Приехать на лекцию",
+                text = "Купить что-то",
                 importance = TodoImportance.HIGH,
                 deadline = createDate(2024, 11, 28),
                 createdAt = Date()
             ),
             TodoItem(
                 id = "11",
-                text = "Обнять маму",
+                text = "Купить что-то",
                 importance = TodoImportance.DEFAULT,
                 deadline = createDate(2024, 11, 28),
                 createdAt = Date()
             ),
             TodoItem(
                 id = "12",
-                text = "Сходить в зал",
+                text = "Купить что-то",
                 importance = TodoImportance.LOW,
                 deadline = createDate(2024, 11, 28),
                 createdAt = Date()
             ),
             TodoItem(
                 id = "13",
-                text = "Изучить корутины",
+                text = "Купить что-то",
                 importance = TodoImportance.HIGH,
                 deadline = createDate(2024, 11, 28),
                 createdAt = Date()
             ),
             TodoItem(
                 id = "14",
-                text = "Починить велик",
+                text = "Купить что-то",
                 importance = TodoImportance.DEFAULT,
                 deadline = createDate(2024, 11, 28),
                 createdAt = Date()
             ),
             TodoItem(
                 id = "15",
-                text = "Заказать продукты",
+                text = "Купить что-то",
                 importance = TodoImportance.LOW,
                 deadline = createDate(2024, 11, 28),
                 createdAt = Date()
             ),
             TodoItem(
                 id = "16",
-                text = "Зарядить телефон",
+                text = "Купить что-то",
                 importance = TodoImportance.DEFAULT,
                 deadline = createDate(2024, 11, 28),
                 createdAt = Date()
             ),
             TodoItem(
                 id = "17",
-                text = "Закрыть кольца",
+                text = "Купить что-то",
                 importance = TodoImportance.LOW,
                 deadline = createDate(2024, 11, 28),
                 createdAt = Date()
             ),
             TodoItem(
                 id = "18",
-                text = "Перестать бояться",
+                text = "Купить что-то",
                 importance = TodoImportance.HIGH,
                 deadline = createDate(2024, 11, 28),
                 createdAt = Date()
             ),
             TodoItem(
                 id = "19",
-                text = "Моя мечта стать разработчиком",
+                text = "Купить что-то",
                 importance = TodoImportance.HIGH,
                 deadline = createDate(2024, 11, 28),
                 createdAt = Date()
             ),
             TodoItem(
                 id = "20",
-                text = "А у меня день рождения 17 ноября",
+                text = "Купить что-то",
                 importance = TodoImportance.LOW,
                 deadline = createDate(2024, 11, 17),
                 createdAt = Date()
