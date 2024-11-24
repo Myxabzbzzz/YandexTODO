@@ -1,48 +1,67 @@
 package com.example.yandextodo
 
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
-import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.runtime.*
 import androidx.navigation.compose.rememberNavController
-import com.example.yandextodo.ui.theme.ToDoAppTheme
-import com.example.yandextodo.viewModel.EditTodoItemViewModel
-import com.example.yandextodo.viewModel.TodoListViewModel
+import com.example.yandextodo.ui.theme.YandexToDoAppTheme
+import androidx.navigation.compose.*
+import androidx.navigation.navArgument
+import com.example.yandextodo.ViewModel.ToDoViewModel
+
 
 class MainActivity : ComponentActivity() {
+
+    object Route {
+        const val mainScreen = "mainScreen"
+        const val formScreen = "formScreen"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
-
+        enableEdgeToEdge()
         setContent {
-            val systemDarkTheme = isSystemInDarkTheme()
-            var darkTheme by remember { mutableStateOf(systemDarkTheme) }
+            val navController = rememberNavController()
+            val viewModel = ToDoViewModel()
+            YandexToDoAppTheme {
+                NavHost(navController, Route.mainScreen)
+                {
+                    composable(route = Route.mainScreen)
+                    {
+                        MainScreen(
+                            createTask = {
+                                navController.navigate(Route.formScreen)
+                            },
+                            updateTask = {
+                                navController.navigate("formScreen/${it.id}")
+                            },
+                            viewModel
+                        )
+                    }
 
-            ToDoAppTheme(darkTheme = darkTheme) {
-                TodoComposeApp(
-                    darkTheme = darkTheme,
-                    onThemeChange = { darkTheme = !darkTheme }
-                )
+                    composable(
+                        "${Route.formScreen}/{toDoItemId}",
+                        arguments = listOf(navArgument("toDoItemId") { defaultValue = "" })
+                    ) {
+                        val toDoItemId = it.arguments?.getString("toDoItemId") ?: ""
+                        FormScreen(
+                            navController = navController,
+                            toDoItemId = toDoItemId,
+                            viewModel
+                        )
+                    }
+                    composable(Route.formScreen) {
+                        FormScreen(
+                            navController = navController,
+                            viewModel = viewModel
+                        )
+                    }
+                }
             }
         }
     }
 
-    @Composable
-    fun TodoComposeApp(darkTheme: Boolean, onThemeChange: () -> Unit) {
-        val navController = rememberNavController()
-        val listViewModel: TodoListViewModel by viewModels { TodoListViewModel.Factory }
-        val editItemViewModel: EditTodoItemViewModel by viewModels { EditTodoItemViewModel.Factory }
 
-        NavGraph(
-            navController = navController,
-            listViewModel = listViewModel,
-            editItemViewModel = editItemViewModel,
-            darkTheme = darkTheme,
-            onThemeChange = onThemeChange
-        )
-    }
 }
