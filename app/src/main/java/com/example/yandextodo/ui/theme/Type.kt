@@ -1,62 +1,72 @@
 package com.example.yandextodo.ui.theme
 
 import androidx.compose.material3.Typography
-import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.yandextodo.R
 
-private val roboto = FontFamily(
-    Font(R.font.roboto_black, FontWeight.Black),
-    Font(R.font.roboto_blackitalic, FontWeight.Black, FontStyle.Italic),
-    Font(R.font.roboto_bold, FontWeight.Bold),
-    Font(R.font.roboto_bolditalic, FontWeight.Bold, FontStyle.Italic),
-    Font(R.font.roboto_italic, FontWeight.Normal, FontStyle.Italic),
-    Font(R.font.roboto_light, FontWeight.Light),
-    Font(R.font.roboto_lightitalic, FontWeight.Light, FontStyle.Italic),
-    Font(R.font.roboto_medium, FontWeight.Medium),
-    Font(R.font.roboto_mediumitalic, FontWeight.Medium, FontStyle.Italic),
+val robotoFontFamily = FontFamily(
     Font(R.font.roboto_regular, FontWeight.Normal),
+    Font(R.font.roboto_bold, FontWeight.Bold),
+    Font(R.font.roboto_black, FontWeight.Black),
     Font(R.font.roboto_thin, FontWeight.Thin),
-    Font(R.font.roboto_thinitalic, FontWeight.Thin, FontStyle.Italic),
+    Font(R.font.roboto_light, FontWeight.Light),
+    Font(R.font.roboto_medium, FontWeight.Medium),
 )
 
-// Set of Material typography styles to start with
+
 val Typography = Typography(
-    displayLarge = TextStyle(
-        fontFamily = roboto,
-        fontWeight = FontWeight.Bold,
-        fontSize = 32.sp,
-        lineHeight = 38.sp,
-    ),
-    headlineLarge = TextStyle(
-        fontFamily = roboto,
-        fontWeight = FontWeight.Bold,
-        fontSize = 20.sp,
-        lineHeight = 32.sp
-    ),
-    labelLarge = TextStyle(
-        fontFamily = roboto,
-        fontWeight = FontWeight.Medium,
-        fontSize = 14.sp,
-        lineHeight = 24.sp
-    ),
     bodyLarge = TextStyle(
-        fontFamily = roboto,
+        fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        lineHeight = 20.sp
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp,
     ),
-    bodyMedium = TextStyle(
-        fontFamily = roboto,
-        fontWeight = FontWeight.Normal,
-        fontSize = 14.sp,
-        lineHeight = 20.sp
-    )
-)
 
-internal val LocalTypography = staticCompositionLocalOf { Typography() }
+)
+@Composable
+fun AppTypography(): Typography {
+    return Typography(
+        titleLarge = TextStyle(
+            fontFamily = robotoFontFamily,
+            fontSize = 32.sp,
+            fontWeight = FontWeight.Medium,
+            color = colorResource(id = R.color.primary)
+        ),
+        titleMedium = TextStyle(
+            fontFamily = robotoFontFamily,
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Medium,
+            color = colorResource(id = R.color.primary)
+        ),
+
+        titleSmall = TextStyle(
+            fontFamily = robotoFontFamily,
+            fontSize = 14.sp,
+            fontWeight = FontWeight.Medium,
+            color = colorResource(id = R.color.primary)
+        ),
+        bodyMedium = TextStyle(
+            fontFamily = robotoFontFamily,
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Normal,
+            color = Color.Black,
+        ),
+        headlineSmall = TextStyle(
+            fontFamily = robotoFontFamily,
+            fontSize = 14.sp,
+            fontWeight = FontWeight.Normal,
+            color = Color.Black
+        ),
+
+        )
+}

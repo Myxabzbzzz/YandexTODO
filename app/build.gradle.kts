@@ -1,8 +1,12 @@
+fun compileOptions(any: Any) {
+
+}
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    kotlin("plugin.serialization") version "2.0.21"
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
@@ -11,7 +15,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.yandextodo"
-        minSdk = 24
+        minSdk = 26
 
         targetSdk = 34
         versionCode = 1
@@ -43,6 +47,7 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -51,8 +56,6 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.navigation.runtime.ktx)
-    implementation(libs.androidx.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -60,6 +63,25 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+
+
+
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.retrofit)
+    implementation(libs.kotlinx.serialization.json)
+
+    implementation(platform("com.squareup.retrofit2:retrofit-bom:2.10.0"))
+    implementation("com.squareup.retrofit2:retrofit:2.10.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.10.0")
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+    implementation(libs.retrofit.kotlinx.serialization.converter)
+//    implementation (com.squareup.retrofit2:retrofit:2.9.0)
+//    implementation (com.squareup.retrofit2:converter-gson:2.5.0)
+//    implementation (com.squareup.picasso:picasso:2.71828)
+//
+//    //noinspection GradleCompatible
+//    implementation (com.android.support:design:28.0.0)
+//    implementation (com.github.d-max:spots-dialog:1.1@aar)
 
 }
